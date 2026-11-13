@@ -1,0 +1,5 @@
+phdlogview (0.6.4+kosmos-1~deb13) trixie; urgency=medium
+
+  * Repackage for KosmOS (trixie.)
+
+ -- Matteo Piscitelli <matteo@matteopiscitelli.it>  Fri, 13 Nov 2026 16:44:17 +0100
