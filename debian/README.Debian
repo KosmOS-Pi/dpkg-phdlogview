@@ -1,6 +1,15 @@
 phdlogview for Debian
 
-This package contains last tagged version from git repository for the program.
+This package contains upstream code versioned 0.6.5 with two patches:
+
+ * fix-sizer-flags: removes sizer flags that wxWidgets 3.2 (the version
+   in Debian trixie) reports with assertion dialogs at startup, because
+   upstream was written for wxWidgets 3.0, which was more permissive.
+ * fix-button-sizes: lets buttons size themselves to their content,
+   because the fixed sizes chosen by upstream leave them empty with
+   GTK3 themes.
+
+Neither patch changes the program's behaviour.
 Windows runtime DLL are removed from original sources.
 
- -- Matteo Piscitelli <matteo@matteopiscitelli.it>  Fri, 13 Nov 2026 16:17:01 +0100
+ -- Matteo Piscitelli <matteo@matteopiscitelli.it>  Fri, 16 Nov 2026 13:17:01 +0100

@@ -1,3 +1,10 @@
+phdlogview (0.6.5+kosmos-1~deb13) trixie; urgency=medium
+
+  * Update to upstream version 0.6.5.
+    See changelog.gz for details. 
+
+ -- Matteo Piscitelli <matteo@matteopiscitelli.it>  Mon, 16 Nov 2026 13:43:34 +0100
+
 phdlogview (0.6.4+kosmos-2~deb13) trixie; urgency=medium
 
   * Remove sizer flags ignored by wxWidgets 3.2, to fix 
