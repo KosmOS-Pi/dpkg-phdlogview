@@ -1,0 +1,131 @@
+Index: dpkg-phdlogview/generated/LogViewFrameBase.cpp
+===================================================================
+--- dpkg-phdlogview.orig/generated/LogViewFrameBase.cpp
++++ dpkg-phdlogview/generated/LogViewFrameBase.cpp
+@@ -107,7 +107,7 @@ LogViewFrameBase::LogViewFrameBase( wxWi
+ 	bSizer10->Add( m_rowInfo, 0, wxALL|wxEXPAND, 5 );
+ 	
+ 	
+-	m_mainSizer->Add( bSizer10, 0, wxALIGN_CENTER_HORIZONTAL|wxEXPAND, 5 );
++	m_mainSizer->Add( bSizer10, 0, wxEXPAND, 5 );
+ 	
+ 	wxBoxSizer* bSizer2;
+ 	bSizer2 = new wxBoxSizer( wxHORIZONTAL );
+@@ -246,7 +246,7 @@ LogViewFrameBase::LogViewFrameBase( wxWi
+ 	m_axes->SetSelection( 0 );
+ 	m_axes->SetToolTip( wxT("Select camera axes (dx/dy) or Mount axes (RA/Dec)") );
+ 	
+-	sbSizer4->Add( m_axes, 0, wxALIGN_LEFT|wxALIGN_RIGHT|wxBOTTOM|wxALIGN_CENTER_VERTICAL, 5 );
++	sbSizer4->Add( m_axes, 0, wxBOTTOM|wxALIGN_CENTER_VERTICAL, 5 );
+ 	
+ 	wxBoxSizer* bSizer12;
+ 	bSizer12 = new wxBoxSizer( wxVERTICAL );
+@@ -255,7 +255,7 @@ LogViewFrameBase::LogViewFrameBase( wxWi
+ 	m_corrections->SetValue(true); 
+ 	m_corrections->SetToolTip( wxT("Plot guide pulses") );
+ 	
+-	bSizer12->Add( m_corrections, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
++	bSizer12->Add( m_corrections, 0, wxALL, 5 );
+ 	
+ 	m_grid = new wxCheckBox( sbSizer4->GetStaticBox(), wxID_ANY, wxT("Grid"), wxDefaultPosition, wxDefaultSize, 0 );
+ 	m_grid->SetValue(true); 
+@@ -290,12 +290,12 @@ LogViewFrameBase::LogViewFrameBase( wxWi
+ 	m_mass = new wxCheckBox( sbSizer4->GetStaticBox(), wxID_ANY, wxT("Star mass"), wxDefaultPosition, wxDefaultSize, 0 );
+ 	m_mass->SetToolTip( wxT("Plot star mass value (guide star intensity)") );
+ 	
+-	bSizer101->Add( m_mass, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
++	bSizer101->Add( m_mass, 0, wxALL, 5 );
+ 	
+ 	m_snr = new wxCheckBox( sbSizer4->GetStaticBox(), wxID_ANY, wxT("SNR"), wxDefaultPosition, wxDefaultSize, 0 );
+ 	m_snr->SetToolTip( wxT("Plot star SNR (signal-to-noise ratio)") );
+ 	
+-	bSizer101->Add( m_snr, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
++	bSizer101->Add( m_snr, 0, wxALL, 5 );
+ 	
+ 	
+ 	sbSizer4->Add( bSizer101, 0, wxALIGN_CENTER_VERTICAL, 5 );
+@@ -307,7 +307,7 @@ LogViewFrameBase::LogViewFrameBase( wxWi
+ 	m_events->SetValue(true); 
+ 	m_events->SetToolTip( wxT("Plot events, including guide parameter changes, server commands received, and star lost events") );
+ 	
+-	bSizer11->Add( m_events, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
++	bSizer11->Add( m_events, 0, wxALL, 5 );
+ 	
+ 	m_limits = new wxCheckBox( sbSizer4->GetStaticBox(), wxID_ANY, wxT("Limits"), wxDefaultPosition, wxDefaultSize, 0 );
+ 	m_limits->SetToolTip( wxT("Plot the min-motion and max-duration levels") );
+@@ -768,7 +768,7 @@ AnalyzeFrameBase::AnalyzeFrameBase( wxWi
+ 	bSizer28->Add( 0, 0, 1, wxEXPAND, 5 );
+ 	
+ 	
+-	bSizer25->Add( bSizer28, 0, wxALIGN_CENTER_HORIZONTAL|wxEXPAND, 5 );
++	bSizer25->Add( bSizer28, 0, wxEXPAND, 5 );
+ 	
+ 	
+ 	this->SetSizer( bSizer25 );
+Index: dpkg-phdlogview/phdlogview.fbp
+===================================================================
+--- dpkg-phdlogview.orig/phdlogview.fbp
++++ dpkg-phdlogview/phdlogview.fbp
+@@ -914,7 +914,7 @@
+                                     <property name="permission">protected</property>
+                                     <object class="sizeritem" expanded="0">
+                                         <property name="border">5</property>
+-                                        <property name="flag">wxALIGN_CENTER_HORIZONTAL|wxEXPAND</property>
++                                        <property name="flag">wxEXPAND</property>
+                                         <property name="proportion">0</property>
+                                         <object class="wxBoxSizer" expanded="0">
+                                             <property name="minimum_size"></property>
+@@ -2631,7 +2631,7 @@
+                                                     </object>
+                                                     <object class="sizeritem" expanded="0">
+                                                         <property name="border">5</property>
+-                                                        <property name="flag">wxALIGN_LEFT|wxALIGN_RIGHT|wxBOTTOM|wxALIGN_CENTER_VERTICAL</property>
++                                                        <property name="flag">wxBOTTOM|wxALIGN_CENTER_VERTICAL</property>
+                                                         <property name="proportion">0</property>
+                                                         <object class="wxRadioBox" expanded="0">
+                                                             <property name="BottomDockable">1</property>
+@@ -2737,7 +2737,7 @@
+                                                             <property name="permission">none</property>
+                                                             <object class="sizeritem" expanded="0">
+                                                                 <property name="border">5</property>
+-                                                                <property name="flag">wxALL|wxALIGN_CENTER_VERTICAL</property>
++                                                                <property name="flag">wxALL</property>
+                                                                 <property name="proportion">0</property>
+                                                                 <object class="wxCheckBox" expanded="0">
+                                                                     <property name="BottomDockable">1</property>
+@@ -3139,7 +3139,7 @@
+                                                             <property name="permission">none</property>
+                                                             <object class="sizeritem" expanded="0">
+                                                                 <property name="border">5</property>
+-                                                                <property name="flag">wxALL|wxALIGN_CENTER_VERTICAL</property>
++                                                                <property name="flag">wxALL</property>
+                                                                 <property name="proportion">0</property>
+                                                                 <object class="wxCheckBox" expanded="0">
+                                                                     <property name="BottomDockable">1</property>
+@@ -3234,7 +3234,7 @@
+                                                             </object>
+                                                             <object class="sizeritem" expanded="0">
+                                                                 <property name="border">5</property>
+-                                                                <property name="flag">wxALL|wxALIGN_CENTER_VERTICAL</property>
++                                                                <property name="flag">wxALL</property>
+                                                                 <property name="proportion">0</property>
+                                                                 <object class="wxCheckBox" expanded="0">
+                                                                     <property name="BottomDockable">1</property>
+@@ -3340,7 +3340,7 @@
+                                                             <property name="permission">none</property>
+                                                             <object class="sizeritem" expanded="0">
+                                                                 <property name="border">5</property>
+-                                                                <property name="flag">wxALL|wxALIGN_CENTER_VERTICAL</property>
++                                                                <property name="flag">wxALL</property>
+                                                                 <property name="proportion">0</property>
+                                                                 <object class="wxCheckBox" expanded="0">
+                                                                     <property name="BottomDockable">1</property>
+@@ -6588,7 +6588,7 @@
+                 </object>
+                 <object class="sizeritem" expanded="0">
+                     <property name="border">5</property>
+-                    <property name="flag">wxALIGN_CENTER_HORIZONTAL|wxEXPAND</property>
++                    <property name="flag">wxEXPAND</property>
+                     <property name="proportion">0</property>
+                     <object class="wxBoxSizer" expanded="0">
+                         <property name="minimum_size"></property>
